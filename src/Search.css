@@ -21,3 +21,13 @@ h1 {
 .text li {
     list-style: none;
 }
+
+.link a {
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.link {
+    font-size: 10px;
+    margin: 25px;
+}

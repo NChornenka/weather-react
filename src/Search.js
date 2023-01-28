@@ -54,6 +54,9 @@ export default function Search() {
         <li>Humidity: {weather.humidity} %</li>
         <li>Wind: {weather.wind} m/s</li>
       </ul>
+      <div className="link">
+      <a href="https://github.com/NChornenka/weather-react">opensource code</a> by Natalia Ch
+      </div>
     </div>
   );
 
