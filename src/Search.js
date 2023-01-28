@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.css';
 import './Search.css';
 import axios from "axios";
-// import bootsrtap from "bootstrap";
+
 
 export default function Search() {
   const [city, setCity] = useState("");
@@ -31,17 +32,17 @@ export default function Search() {
     axios.get(apiUrl).then(showTemperature);
      }
   let form = (
-    <form className="search-form" role="search" onSubmit={handleSubmit}>
+    <form className="d-flex" role="search" onSubmit={handleSubmit}>
       <input
-        className="form-control me-2"
+        className="form-control"
         type="text"
         placeholder="City"
         aria-label="Search"
         onChange={updateCity}
       />
-      <button className="btn btn-outline-success ms-2" type="submit">
+      <input className="btn btn-outline-success" type="submit"
         Search
-      </button>
+      />
     </form>
   );
 
