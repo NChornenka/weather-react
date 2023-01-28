@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Search.css";
+import './Search.css';
 import axios from "axios";
 // import bootsrtap from "bootstrap";
 
@@ -10,7 +10,6 @@ export default function Search() {
 
   function updateCity(event) {
     setCity(event.target.value);
-    console.log(city);
   }
 
   function showTemperature(response) {
@@ -30,14 +29,13 @@ export default function Search() {
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showTemperature);
-    
-  }
+     }
   let form = (
-    <form className="d-flex" role="search" onSubmit={handleSubmit}>
+    <form className="search-form" role="search" onSubmit={handleSubmit}>
       <input
         className="form-control me-2"
-        type="search"
-        placeholder="Search"
+        type="text"
+        placeholder="City"
         aria-label="Search"
         onChange={updateCity}
       />
@@ -48,7 +46,7 @@ export default function Search() {
   );
 
   let text = (
-    <div>
+    <div className="text">
       <h1>{weather.header}</h1>
       <ul>
         <li>Temperature: {weather.temperature} °C </li>
@@ -61,12 +59,12 @@ export default function Search() {
 
   if (loaded) {
     return (
-      <div className="Search">
+      <div className="search">
         <div>{form}</div>
         <div>{text}</div>
       </div>
     );
   } else {
-    return <div>{form}</div>;
+    return <div className="search">{form}</div>;
   }
 }
