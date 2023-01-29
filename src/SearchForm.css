@@ -1,0 +1,20 @@
+.btn-outline-success {
+    --bs-btn-color: #00337C;
+    --bs-btn-border-color: #00337C;
+    --bs-btn-hover-bg: #00337C;
+    --bs-btn-hover-border-color:#00337C;
+    --bs-btn-active-bg: #00337C;
+    --bs-btn-active-border-color: #00337C;
+    --bs-btn-disabled-color: #00337C;
+    --bs-btn-disabled-border-color: #00337C;
+    
+}
+
+h1 {
+    color: #00337C;
+    font-size: 48px;
+}
+
+li {
+    list-style: none;
+}

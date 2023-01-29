@@ -1,19 +1,28 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import './Search.css';
+import './SearchForm.css';
 import axios from "axios";
 
 
-export default function Search() {
-  const [city, setCity] = useState("");
+export default function SearchForm(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [weather, setWeather] = useState({});
   const [loaded, setLoaded] = useState(false);
+
+    function getCity(event) {
+    event.preventDefault();
+    if (city.length > 2){
+      searchCity();
+          } else {
+            alert("Enter a city, please")
+          }
+        }
 
   function updateCity(event) {
     setCity(event.target.value);
   }
 
-  function showTemperature(response) {
+  function handleSubmit(response) {
     setLoaded(true);
     setWeather({
       temperature: Math.round(response.data.main.temp),
@@ -24,15 +33,15 @@ export default function Search() {
     });
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    let apiKey = "d682095eed5d0971ffeaf2a35ab9e196";
+  function searchCity(event) {
+    let apiKey = 'fdaeb70f86d9811e4917af5701e5fdf2';
+    // let apiKey = "d682095eed5d0971ffeaf2a35ab9e196";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(showTemperature);
+    axios.get(apiUrl).then(handleSubmit);
      }
   let form = (
-    <form className="d-flex" role="search" onSubmit={handleSubmit}>
+    <form className="d-flex" role="search" onSubmit={getCity}>
       <input
         className="form-control"
         type="text"
@@ -51,7 +60,7 @@ export default function Search() {
       <h1>{weather.header}</h1>
       <ul>
         <li>Temperature: {weather.temperature} °C </li>
-        <li>Description: {weather.description}</li>
+        <li className="text-capitalize">Description: {weather.description}</li>
         <li>Humidity: {weather.humidity} %</li>
         <li>Wind: {weather.wind} m/s</li>
       </ul>
@@ -63,12 +72,32 @@ export default function Search() {
 
   if (loaded) {
     return (
-      <div className="search">
+      <div className="SearchForm">
         <div>{form}</div>
         <div>{text}</div>
       </div>
     );
   } else {
-    return <div className="search">{form}</div>;
+    searchCity();
+    return "Loading";
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
