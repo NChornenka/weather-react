@@ -1,0 +1,56 @@
+.Weather .btn-outline-success {
+    --bs-btn-color: #00337C;
+    --bs-btn-border-color: #00337C;
+    --bs-btn-hover-bg: #00337C;
+    --bs-btn-hover-border-color:#00337C;
+    --bs-btn-active-bg: #00337C;
+    --bs-btn-active-border-color: #00337C;
+    --bs-btn-disabled-color: #00337C;
+    --bs-btn-disabled-border-color: #00337C;
+    margin-left: 10px;
+    
+}
+
+.Weather .container-weather {
+    padding: 15px
+}
+
+.Weather h1 {
+    color: #00337C;
+    font-size: 48px;
+}
+
+.Weather ul {
+    margin: 0;
+    padding: 0;
+    color: #7B8FA1;
+    font-size: 16px;
+}
+
+.Weather li {
+    list-style: none;
+} 
+.Weather img {
+    height: 64px;
+    margin-right: 10px;
+    
+}
+
+.Weather .temp {
+    font-size: 56px;
+    line-height: 56px;
+    color: #00337C;
+}
+
+.Weather .unit {
+    position: relative;
+    top: -10px;
+    color: #7B8FA1;
+}
+
+.Weather {
+    margin: 0, auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+

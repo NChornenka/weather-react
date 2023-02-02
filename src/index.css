@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.container {
+.container-weather {
   max-width: 600px;
   border: 0.5px solid #00337C;
   border-radius: 10px;
