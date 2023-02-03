@@ -7,7 +7,6 @@ export default function Weather(props){
     const [weatherData, setWeatherData] = useState({});
 
     function handleSubmit(response){
-        console.log(response);
         setReady(true);
         setWeatherData(
             {
@@ -16,7 +15,7 @@ export default function Weather(props){
                 humidity: response.data.main.humidity,
                 wind: Math.round(response.data.wind.speed),
                 header: response.data.name,
-                date: "Saturday, Feb 16",
+                date: "Saturday, Feb 23",
                 iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
                 
 

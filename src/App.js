@@ -9,7 +9,7 @@ export default function App(){
         <div className='container'>
             <Weather defaultCity="New York"/>
             <footer>
-      <a href="https://github.com/NChornenka/weather-react" target="_blank">opensource code</a> by Natalia Ch
+      <a href="https://github.com/NChornenka/weather-react" rel="noopener">opensource code</a> by Natalia Ch
             </footer>
 
         </div>
