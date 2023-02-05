@@ -19,7 +19,7 @@ export default function Weather(props){
                 wind: Math.round(response.data.wind.speed),
                 header: response.data.name,
                 date: new Date(response.data.dt * 1000),
-                iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,                
+                icon: response.data.weather[0].icon,                
 
             }
             
@@ -59,9 +59,8 @@ export default function Weather(props){
             onSubmit={handleSubmit}>
             <input
             className="form-control"
-            type="text"
+            type="search"
             placeholder="City"
-            aria-label="search"
             autoFocus="on"
             onChange={updateCity}
             />
