@@ -33,7 +33,7 @@
 
 } 
 .Weather canvas {
-    margin-right: 10px;
+    margin-right: 5px;
     margin-top: 5px;
     
 }
@@ -44,11 +44,7 @@
     color: #00337C;
 }
 
-.Weather .unit {
-    position: relative;
-    top: -10px;
-    color: #7B8FA1;
-}
+
 
 .Weather {
     margin: 0, auto;
