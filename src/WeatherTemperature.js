@@ -7,7 +7,7 @@ export default function WeatherTemperature(props) {
     function intoFahrenheit(event){
         event.preventDefault();
         setUnit("fahrenheit");
-        let fahrenheitTemperature = props.temperature
+
     }
 
     function intoCelcius(event){
