@@ -20,7 +20,8 @@ export default function Weather(props){
                 wind: Math.round(response.data.wind.speed),
                 header: response.data.name,
                 date: new Date(response.data.dt * 1000),
-                icon: response.data.weather[0].icon,                
+                icon: response.data.weather[0].icon,  
+                coordinates: response.data.coord,              
 
             }
             
@@ -68,7 +69,7 @@ export default function Weather(props){
             <input className="btn btn-outline-success" type="submit" value="Search" />
             </form>
     <WeatherData data={weatherData}/>
-    <WeatherForecast />
+    <WeatherForecast coordinates={weatherData.coordinates}/>
         </div>
     </div>
     )
