@@ -44,11 +44,23 @@ export default function Weather(props){
     }
 
     function search(){
-
         let apiKey = "d682095eed5d0971ffeaf2a35ab9e196";
         let units = "metric";
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
         axios.get(apiUrl).then(handleResponse);
+
+    }
+
+    function current(event){
+        event.preventDefault();
+        navigator.geolocation.getCurrentPosition(getCurrentData)}
+
+    function getCurrentData(position){
+        let apiKey = "d682095eed5d0971ffeaf2a35ab9e196";
+        let apiURL = "https://api.openweathermap.org/data/2.5/weather";
+        let latitude = position.coords.latitude;
+        let longtitude = position.coords.longitude;
+        axios.get(`${apiURL}?lat=${latitude}&lon=${longtitude}&appid=${apiKey}&units=metric`).then(handleResponse);
 
     }
 
@@ -67,6 +79,7 @@ export default function Weather(props){
             onChange={updateCity}
             />
             <input className="btn btn-outline-success" type="submit" value="Search" />
+            <input className="btn btn-outline-success" type="submit" value="Current" onClick={current} />
             </form>
     <WeatherData data={weatherData}/>
     <WeatherForecast coordinates={weatherData.coordinates}/>
