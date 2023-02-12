@@ -4,6 +4,7 @@ import WeatherIcon from"./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 
 
+
 export default function WeatherData(props) {
     return (
 <div className="WeatherData">
@@ -18,7 +19,7 @@ export default function WeatherData(props) {
     <div className='row'>
         <div className='col-6 d-flex align-items-center'>
                 <WeatherIcon code={props.data.icon} size={56}/>
-                <WeatherTemperature temperature={props.data.temperature} />
+                <WeatherTemperature temperature={props.data.temperature} unit={props.unit} setUnit={props.setUnit}/>
         </div>
         <div className='col-6'>
             <ul>
@@ -27,6 +28,7 @@ export default function WeatherData(props) {
                 <li>Wind: {props.data.wind}m/s</li>
             </ul>
         </div>
+        
     </div>
 </div>
     )

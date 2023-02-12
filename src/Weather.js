@@ -5,10 +5,12 @@ import WeatherData from './WeatherData';
 import WeatherForecast from './WeatherForecast';
 
 
+
 export default function Weather(props){
     const [ready, setReady] = useState(false);
     const [weatherData, setWeatherData] = useState({});
     const [city, setCity] = useState(props.defaultCity);
+    const [unit, setUnit] = useState("celcius");
 
     function handleResponse(response){
         setReady(true);
@@ -33,9 +35,11 @@ export default function Weather(props){
         event.preventDefault();
         if (city.length > 2){
             search();
+            
                     } else {
                         alert("Enter a city, please")
                     }
+                    document.getElementById("search-form").value="";
     }
 
     function updateCity(event){
@@ -77,12 +81,14 @@ export default function Weather(props){
             placeholder="City"
             autoFocus="on"
             onChange={updateCity}
+            id='search-form'
             />
             <input className="btn btn-outline-success" type="submit" value="Search" />
             <input className="btn btn-outline-success" type="submit" value="Current" onClick={current} />
             </form>
-    <WeatherData data={weatherData}/>
-    <WeatherForecast coordinates={weatherData.coordinates}/>
+    <WeatherData data={weatherData} unit={unit} setUnit={setUnit}/>
+    <WeatherForecast coordinates={weatherData.coordinates} unit={unit} setUnit={setUnit}/>
+
         </div>
     </div>
     )
